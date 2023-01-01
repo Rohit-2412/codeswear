@@ -1,26 +1,43 @@
-import Image from 'next/image'
-import React from 'react'
-import Link from 'next/link'
-import { AiOutlineShoppingCart } from 'react-icons/ai'
-const Nabvar = () => {
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
+import { AiOutlineShoppingCart } from "react-icons/ai";
+
+const Navbar = () => {
     return (
-        <div className='flex flex-col md:flex-row md:justify-start justify-center items-center py-2 shadow-xl'>
+        <div className="shadow-md flex flex-col md:flex-row md:justify-start justify-center items-center  py-3">
             <div className="logo mx-5">
-                <Image src="/vercel.svg" width={100} height={100} />
+                <Link href="/">
+                    <Image
+                        src="/logo.png"
+                        height={40}
+                        width={170}
+                        alt="Loading..."
+                        className="w-10/12"
+                    />
+                </Link>
             </div>
             <div className="nav">
-                <ul className='flex items-center space-x-2 font-bold md:text-md'>
-                    <Link href={'/tshirts'}><li>Tshirt</li></Link>
-                    <Link href={'/hoodies'}><li>Hoodies</li></Link>
-                    <Link href={'/stickers'}><li>Stickers</li></Link>
-                    <Link href={'/mugs'}><li>Mugs</li></Link>
+                <ul className="flex space-x-2 font-bold md:text-sm">
+                    <Link href="/tshirts">
+                        <li>T-Shirts</li>
+                    </Link>
+                    <Link href="/hoodies">
+                        <li>Hoodies</li>
+                    </Link>
+                    <Link href="/mugs">
+                        <li>Mugs</li>
+                    </Link>
+                    <Link href="/stickers">
+                        <li>Stickers</li>
+                    </Link>
                 </ul>
             </div>
-            <div className="cart absolute right-1 top-4">
-                <AiOutlineShoppingCart className='text-xl md:text-3xl' />
+            <div className="cart absolute right-0 mx-5">
+                <AiOutlineShoppingCart size={30} />
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default Nabvar
+export default Navbar;
