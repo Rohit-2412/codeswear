@@ -4,7 +4,7 @@ import React from "react";
 import { AiFillCloseCircle, AiFillMinusCircle, AiFillPlusCircle, AiOutlineShoppingCart } from "react-icons/ai";
 import { BsBagCheckFill } from "react-icons/bs";
 import { useRef } from "react";
-const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subTotal }) => {
+const Navbar = ({ cart, addToCart, removeFromCart, clearCart }) => {
 
     const toggleCart = () => {
         if (ref.current.classList.contains("translate-x-full")) {
@@ -18,7 +18,7 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subTotal }) => {
     }
     const ref = useRef()
     return (
-        <div className="shadow-md flex flex-col md:flex-row md:justify-start justify-center items-center  py-3">
+        <div className="shadow-md flex flex-col md:flex-row md:justify-start justify-center items-center py-3 sticky top-0 z-10 bg-white">
             <div className="logo mx-5">
                 <Link href="/">
                     <Image
@@ -50,7 +50,7 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subTotal }) => {
                 <AiOutlineShoppingCart size={30} />
             </div>
 
-            <div ref={ref} className="w-72 h-full sideCart absolute bg-pink-100 top-0 right-0 py-10 px-8 transform transition-transform translate-x-full">
+            <div ref={ref} className={`w-72 h-[100vh] sideCart absolute bg-pink-100 top-0 right-0 py-10 px-8 transform transition-transform ${Object.keys(cart).length !== 0 ? 'translate-x-0' : 'translate-x-full'}`}>
                 <h2 className="font-bold text-xl text-center">Shopping Cart</h2>
                 <span onClick={toggleCart} className="absolute top-3 right-2 cursor-pointer text-2xl text-pink-500"><AiFillCloseCircle /></span>
 
@@ -77,7 +77,9 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subTotal }) => {
                 </ol>
 
                 {(Object.keys(cart).length !== 0) && <div className="flex">
-                    <button className="flex mx-auto mr-2 text-white bg-green-500 border-0 py-2 px-2 focus:outline-none hover:bg-green-600 rounded text-sm"><BsBagCheckFill className="m-1" />Checkout</button>
+                    <Link href={'/checkout'} >
+                        <button className="flex mx-auto mr-2 text-white bg-green-500 border-0 py-2 px-2 focus:outline-none hover:bg-green-600 rounded text-sm"><BsBagCheckFill className="m-1" />Checkout</button>
+                    </Link>
                     {/* clear cart button */}
                     <button onClick={clearCart} className="flex mx-auto mr-2 text-white bg-red-500 border-0 py-2 px-2 focus:outline-none hover:bg-red-600 rounded text-sm">Clear Cart</button>
                 </div>

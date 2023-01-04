@@ -12,7 +12,7 @@ const Tshirts = () => {
                                 <a className="block relative rounded overflow-hidden">
                                     <img
                                         alt="ecommerce"
-                                        className="h-[30vh] m-auto md:h-[35vh]"
+                                        className="h-[30vh] m-auto md:h-[30vh]"
                                         src="https://m.media-amazon.com/images/I/61qta+0D54L._AC_UX522_.jpg"
                                     />
                                 </a>
@@ -35,7 +35,7 @@ const Tshirts = () => {
                                 <a className="block relative rounded overflow-hidden">
                                     <img
                                         alt="ecommerce"
-                                        className="h-[30vh] m-auto md:h-[35vh]"
+                                        className="h-[30vh] m-auto md:h-[30vh]"
                                         src="https://m.media-amazon.com/images/I/61qta+0D54L._AC_UX522_.jpg"
                                     />
                                 </a>
@@ -58,7 +58,7 @@ const Tshirts = () => {
                                 <a className="block relative rounded overflow-hidden">
                                     <img
                                         alt="ecommerce"
-                                        className="h-[30vh] m-auto md:h-[35vh]"
+                                        className="h-[30vh] m-auto md:h-[30vh]"
                                         src="https://m.media-amazon.com/images/I/61qta+0D54L._AC_UX522_.jpg"
                                     />
                                 </a>
@@ -81,7 +81,7 @@ const Tshirts = () => {
                                 <a className="block relative rounded overflow-hidden">
                                     <img
                                         alt="ecommerce"
-                                        className="h-[30vh] m-auto md:h-[35vh]"
+                                        className="h-[30vh] m-auto md:h-[30vh]"
                                         src="https://m.media-amazon.com/images/I/61qta+0D54L._AC_UX522_.jpg"
                                     />
                                 </a>
@@ -103,7 +103,7 @@ const Tshirts = () => {
                                 <a className="block relative rounded overflow-hidden">
                                     <img
                                         alt="ecommerce"
-                                        className="h-[30vh] m-auto md:h-[35vh]"
+                                        className="h-[30vh] m-auto md:h-[30vh]"
                                         src="https://m.media-amazon.com/images/I/61qta+0D54L._AC_UX522_.jpg"
                                     />
                                 </a>
@@ -125,7 +125,7 @@ const Tshirts = () => {
                                 <a className="block relative rounded overflow-hidden">
                                     <img
                                         alt="ecommerce"
-                                        className="h-[30vh] m-auto md:h-[35vh]"
+                                        className="h-[30vh] m-auto md:h-[30vh]"
                                         src="https://m.media-amazon.com/images/I/61qta+0D54L._AC_UX522_.jpg"
                                     />
                                 </a>
@@ -147,7 +147,7 @@ const Tshirts = () => {
                                 <a className="block relative rounded overflow-hidden">
                                     <img
                                         alt="ecommerce"
-                                        className="h-[30vh] m-auto md:h-[35vh]"
+                                        className="h-[30vh] m-auto md:h-[30vh]"
                                         src="https://m.media-amazon.com/images/I/61qta+0D54L._AC_UX522_.jpg"
                                     />
                                 </a>
@@ -169,7 +169,7 @@ const Tshirts = () => {
                                 <a className="block relative rounded overflow-hidden">
                                     <img
                                         alt="ecommerce"
-                                        className="h-[30vh] m-auto md:h-[35vh]"
+                                        className="h-[30vh] m-auto md:h-[30vh]"
                                         src="https://m.media-amazon.com/images/I/61qta+0D54L._AC_UX522_.jpg"
                                     />
                                 </a>
