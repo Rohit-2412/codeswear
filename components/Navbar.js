@@ -1,11 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import { React, useState } from "react";
 import { AiFillCloseCircle, AiFillMinusCircle, AiFillPlusCircle, AiOutlineShoppingCart } from "react-icons/ai";
 import { BsBagCheckFill } from "react-icons/bs";
 import { MdAccountCircle } from "react-icons/md";
 import { useRef } from "react";
-const Navbar = ({ cart, addToCart, removeFromCart, clearCart }) => {
+const Navbar = ({ user, cart, addToCart, removeFromCart, clearCart, logout }) => {
+    const [dropdown, setDropdown] = useState(false)
 
     const toggleCart = () => {
         if (ref.current.classList.contains("translate-x-full")) {
@@ -17,22 +18,23 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart }) => {
             ref.current.classList.add("translate-x-full")
         }
     }
+
     const ref = useRef()
     return (
         <div className="shadow-md flex flex-col md:flex-row md:justify-start justify-center items-center py-3 sticky top-0 z-10 bg-white">
-            <div className="logo mx-5">
+            <div className="logo md:mx-5 mr-auto">
                 <Link href="/">
                     <Image
                         src="/logo.png"
                         height={40}
                         width={170}
                         alt="Loading..."
-                        className="w-10/12"
+                        className="w-8/10"
                     />
                 </Link>
             </div>
-            <div className="nav">
-                <ul className="flex space-x-2 font-bold md:text-sm">
+            <div className="nav md:mt-0 mt-4">
+                <ul className="flex space-x-2 font-bold md:text-md">
                     <Link href="/tshirts">
                         <li className="hover:text-pink-500">T-Shirts</li>
                     </Link>
@@ -47,8 +49,21 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart }) => {
                     </Link>
                 </ul>
             </div>
-            <div className="flex cart absolute right-0 mx-5 cursor-pointer">
-                <Link href={'/login'} > <MdAccountCircle size={30} className="mx-3 text-pink-500" /></Link>
+            <div className="flex cart absolute top-3 right-0 mx-5 cursor-pointer items-center">
+
+                <a onMouseOver={() => { setDropdown(true) }} onMouseLeave={() => { setDropdown(false) }}> {user.value && <MdAccountCircle size={30} className="mx-3 text-pink-500" />}
+                    {dropdown &&
+                        <div onMouseOver={() => { setDropdown(true) }} onMouseLeave={() => { setDropdown(false) }} className="absolute top-8 right-10 w-36 bg-pink-300 px-6 py-2 rounded-lg">
+                            <ol>
+                                <Link href={'/myaccount'}><li className="py-1 text-sm hover:text-white font-semibold">My Account</li></Link>
+                                <Link href={'/order'}><li className="py-1 text-sm hover:text-white font-semibold">Orders</li></Link>
+                                <li onClick={logout} className="py-1 text-sm hover:text-white font-semibold">Logout</li>
+                            </ol>
+                        </div>}
+                </a>
+                {!user.value && <Link href="/login">
+                    <button className="bg-pink-500 text-white font-semibold px-3 py-1 rounded-lg hover:bg-white hover:text-pink-400 hover:border-pink-600 border-2 mr-4">Login</button>
+                </Link>}
                 <AiOutlineShoppingCart onClick={toggleCart} size={30} className="text-pink-500" />
             </div>
 

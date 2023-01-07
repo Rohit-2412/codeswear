@@ -27,13 +27,14 @@ const Login = () => {
         })
 
         let response = await res.json()
+        setEmail('')
+        setPassword('')
 
         console.log(response);
         if (response.success) {
-            setEmail('')
-            setPassword('')
+            localStorage.setItem('token', response.token)
 
-            toast.success(response.message, {
+            toast.success("Login Sucessfull", {
                 position: "top-left",
                 autoClose: 1500,
                 hideProgressBar: false,

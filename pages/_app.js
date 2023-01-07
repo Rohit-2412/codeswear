@@ -6,6 +6,9 @@ import { useRouter } from 'next/router'
 export default function App({ Component, pageProps }) {
     const [cart, setCart] = useState({})
     const [subTotal, setSubTotal] = useState(0)
+    const [user, setUser] = useState({ value: null })
+    const [key, setKey] = useState()
+
     const router = useRouter()
     useEffect(() => {
         try {
@@ -18,7 +21,22 @@ export default function App({ Component, pageProps }) {
             console.log(error)
             localStorage.clear()
         }
-    }, [])
+        const token = localStorage.getItem('token')
+        if (token) {
+            setUser({ value: token })
+            setKey(Math.random())
+        }
+        else {
+
+        }
+    }, [router.query])
+
+    const logout = () => {
+        localStorage.clear()
+        setUser({ value: null })
+        setKey(Math.random())
+        router.push('/')
+    }
 
     const saveCart = (cart) => {
         localStorage.setItem(cart, JSON.stringify(cart))
@@ -77,7 +95,7 @@ export default function App({ Component, pageProps }) {
         saveCart(newCart)
     }
     return <>
-        <Nabvar key={subTotal} cart={cart} addToCart={addToCart} removeFromCart={removeFromCart
+        <Nabvar user={user} key={key} logout={logout} cart={cart} addToCart={addToCart} removeFromCart={removeFromCart
         } clearCart={clearCart} subTotal={subTotal} />
 
         <Component cart={cart} addToCart={addToCart} removeFromCart={removeFromCart
