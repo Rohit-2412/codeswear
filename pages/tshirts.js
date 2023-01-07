@@ -6,8 +6,14 @@ const Tshirts = ({ products }) => {
     return (
         <div>
             <section className="text-gray-600 body-font">
-                <div className="container px-5 py-24 mx-auto">
+                <div className="container px-10 py-24 mx-auto">
                     <div className="flex flex-wrap justify-center -m-4">
+
+                        {Object.keys(products).length === 0 && <div>
+                            <h1 className="text-2xl font-bold text-center text-pink-500">No Products Right Now!</h1>
+                            <h2 className="text-lg font-semibold mt-4">We'll add New products soon</h2>
+                        </div>}
+
                         {
                             Object.keys(products).map((item) => {
                                 return <Link key={products[item]._id} href={`product/${products[item].slug}`}>

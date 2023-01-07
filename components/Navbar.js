@@ -34,16 +34,16 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart }) => {
             <div className="nav">
                 <ul className="flex space-x-2 font-bold md:text-sm">
                     <Link href="/tshirts">
-                        <li>T-Shirts</li>
+                        <li className="hover:text-pink-500">T-Shirts</li>
                     </Link>
                     <Link href="/hoodies">
-                        <li>Hoodies</li>
+                        <li className="hover:text-pink-500">Hoodies</li>
                     </Link>
                     <Link href="/mugs">
-                        <li>Mugs</li>
+                        <li className="hover:text-pink-500">Mugs</li>
                     </Link>
                     <Link href="/stickers">
-                        <li>Stickers</li>
+                        <li className="hover:text-pink-500">Stickers</li>
                     </Link>
                 </ul>
             </div>
@@ -52,7 +52,7 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart }) => {
                 <AiOutlineShoppingCart onClick={toggleCart} size={30} className="text-pink-500" />
             </div>
 
-            <div ref={ref} className={`w-72 h-[100vh] sideCart absolute bg-pink-100 top-0 right-0 py-10 px-8 transform transition-transform ${Object.keys(cart).length !== 0 ? 'translate-x-0' : 'translate-x-full'}`}>
+            <div ref={ref} className={`w-72 h-[100vh] overflow-y-scroll sideCart absolute bg-pink-100 top-0 right-0 py-10 px-8 transform transition-transform ${Object.keys(cart).length !== 0 ? 'translate-x-0' : 'translate-x-full'}`}>
                 <h2 className="font-bold text-xl text-center">Shopping Cart</h2>
                 <span onClick={toggleCart} className="absolute top-3 right-2 cursor-pointer text-2xl text-pink-500"><AiFillCloseCircle /></span>
 

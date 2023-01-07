@@ -4,7 +4,7 @@ import { BsBagCheckFill } from "react-icons/bs";
 import Link from 'next/link';
 const Checkout = ({ cart, addToCart, removeFromCart, subTotal }) => {
     return (
-        <div className="container mx-auto px-24">
+        <div className="container mx-auto md:px-24 px-4">
             <h1 className='font-bold text-3xl text-center mt-5 my-8'>Checkout</h1>
             <h2 className='font-bold text-xl my-4'>Delivery Details</h2>
             <div className="mx-auto flex">
@@ -84,14 +84,13 @@ const Checkout = ({ cart, addToCart, removeFromCart, subTotal }) => {
 
                 </ol>
 
-                <span className="font-bold">Subtotal: ₹{subTotal}</span>
+                <span className="font-bold pb-2">Subtotal: ₹{subTotal}</span>
             </div>
             <div className="mt-4">
                 <Link href={'/checkout'} >
                     <button className="flex ml-4 text-white bg-green-500 border-0 py-2 px-2 focus:outline-none hover:bg-green-600 rounded text-sm"><BsBagCheckFill className="m-1" />Proceed to Pay</button>
                 </Link>
             </div>
-            // 46th tut
         </div>
     )
 }

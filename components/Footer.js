@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Link from 'next/link'
 const Footer = () => {
     return (
         <div>
@@ -10,26 +10,27 @@ const Footer = () => {
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
                                 <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
                             </svg>
-                            <span className="ml-3 text-xl">Tailblocks</span>
+                            <span className="ml-3 text-xl">Codeswear</span>
                         </a>
-                        <p className="mt-2 text-sm text-gray-500">Air plant banjo lyft occupy retro adaptogen indego</p>
+                        <p className="mt-2 text-sm text-gray-500"><b> Wear the &lt;code /&gt; </b> <br /> Premium Coding tshirts, hoodies, mugs, stickers and many more</p>
                     </div>
                     <div className="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
                         <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-                            <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
+                            <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">SHOP</h2>
                             <nav className="list-none mb-10">
                                 <li>
-                                    <a className="text-gray-600 hover:text-gray-800">First Link</a>
-                                </li>
+                                    <Link href={'/tshirts'} >  <a className="text-gray-600 hover:text-gray-800">Tshirts</a>
+                                    </Link></li>
                                 <li>
-                                    <a className="text-gray-600 hover:text-gray-800">Second Link</a>
-                                </li>
+                                    <Link href={'/hoodies'} >  <a className="text-gray-600 hover:text-gray-800">Hoodies</a>
+                                    </Link></li>
                                 <li>
-                                    <a className="text-gray-600 hover:text-gray-800">Third Link</a>
-                                </li>
+                                    <Link href={'/mugs'} >  <a className="text-gray-600 hover:text-gray-800">Mugs</a>
+                                    </Link></li>
                                 <li>
-                                    <a className="text-gray-600 hover:text-gray-800">Fourth Link</a>
-                                </li>
+                                    <Link href={'/stickers'} >  <a className="text-gray-600 hover:text-gray-800">Stickers</a>
+                                    </Link></li>
+
                             </nav>
                         </div>
                         <div className="lg:w-1/4 md:w-1/2 w-full px-4">
@@ -87,9 +88,7 @@ const Footer = () => {
                 </div>
                 <div className="bg-gray-100">
                     <div className="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
-                        <p className="text-gray-500 text-sm text-center sm:text-left">© 2020 Tailblocks —
-                            <a href="https://twitter.com/knyttneve" rel="noopener noreferrer" className="text-gray-600 ml-1" target="_blank">@knyttneve</a>
-                        </p>
+                        <p className="text-gray-500 text-sm text-center sm:text-left">© 2022 Codeswear — All Rights Reserved</p>
                         <span className="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
                             <a className="text-gray-500">
                                 <svg fill="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-5 h-5" viewBox="0 0 24 24">
