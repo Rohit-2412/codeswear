@@ -2,9 +2,16 @@ import React from 'react'
 import { AiFillMinusCircle, AiFillPlusCircle } from "react-icons/ai";
 import { BsBagCheckFill } from "react-icons/bs";
 import Link from 'next/link';
+import Head from 'next/head';
+
 const Checkout = ({ cart, addToCart, removeFromCart, subTotal }) => {
+
     return (
         <div className="container mx-auto md:px-24 px-4">
+            <Head>
+                <meta name='viewport' content='width=device-width, height=device-width, initial-scale=1.0, maximum scale=1.0' />
+            </Head>
+            {/* <Script src={`${process.env.PAYTM_HOST}/merchantpgui/checkoutjs/merchants/${process.env.PAYTM_MID}.js`} onLoad="onScriptLoad();" /> */}
             <h1 className='font-bold text-3xl text-center mt-5 my-8'>Checkout</h1>
             <h2 className='font-bold text-xl my-4'>Delivery Details</h2>
             <div className="mx-auto flex">
